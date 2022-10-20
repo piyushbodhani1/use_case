@@ -8,5 +8,8 @@ public interface InsuranceRepository extends JpaRepository<InsuranceEntity, Inte
 
 	@Query(value = "Select *  from clientinsurance where client_id = ?1", nativeQuery = true)
 	List<InsuranceEntity> getinfo(Integer client_id);
+	
+	@Query(value = "Select *  from clientinsurance", nativeQuery = true)
+	List<InsuranceEntity> getinfo1();
 
 }
