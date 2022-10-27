@@ -1,14 +1,12 @@
-package com.microservices.microservices;
+package com.kpi.microservice.currencyexchangeexampleservice.demo2;
 
-import java.math.BigDecimal;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import java.math.BigDecimal;  
+import javax.persistence.Column;  
+import javax.persistence.Entity;  
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Table;  
 @Entity  
-@Table(name ="exchange_value")
-
+@Table(name ="exchange_value")  
 public class ExchangeValueEntity {
 	@Id  
 	@Column(name="id")  

@@ -1,9 +1,13 @@
-package com.microservices.microservices;
+package com.kpi.microservice.currencyexchangeexampleservice.demo2;
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class CurrencyExchangeSampleController {
 	@Autowired
 	private ExchangeValueRepo ev;
@@ -14,4 +18,5 @@ public class CurrencyExchangeSampleController {
 		return ev.findByFromAndTo(from, to);
 		
 	}  
+	
 }
