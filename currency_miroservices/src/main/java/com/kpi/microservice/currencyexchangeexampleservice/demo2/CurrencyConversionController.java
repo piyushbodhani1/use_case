@@ -31,57 +31,5 @@ public class CurrencyConversionController {
 	            quantity*(response.getConversionMultiple()), response.getPort());
 }
 	  
-	  public long c_id(@PathVariable String from, @PathVariable String to,
-		      @PathVariable int quantity) {
-
-		    Map<String, String> uriVariables = new HashMap<>();
-		    uriVariables.put("from", from);
-		    uriVariables.put("to", to);
-		    ResponseEntity<CurrencyConversionSampleBean> responseEntity = new RestTemplate().getForEntity(
-		            "http://localhost:8080/currency-exchange/from/{from}/to/{to}", CurrencyConversionSampleBean.class,
-		            uriVariables);
-
-		        CurrencyConversionSampleBean response = responseEntity.getBody();
-
-		         new CurrencyConversionSampleBean(response.getId(), from, to, response.getConversionMultiple(), quantity,
-			            quantity*(response.getConversionMultiple()), response.getPort());
-		        
-		        return response.getId();
-	}
-	  
-	  public int port_c(@PathVariable String from, @PathVariable String to,
-		      @PathVariable int quantity) {
-
-		    Map<String, String> uriVariables = new HashMap<>();
-		    uriVariables.put("from", from);
-		    uriVariables.put("to", to);
-		    ResponseEntity<CurrencyConversionSampleBean> responseEntity = new RestTemplate().getForEntity(
-		            "http://localhost:8080/currency-exchange/from/{from}/to/{to}", CurrencyConversionSampleBean.class,
-		            uriVariables);
-
-		        CurrencyConversionSampleBean response = responseEntity.getBody();
-
-		         new CurrencyConversionSampleBean(response.getId(), from, to, response.getConversionMultiple(), quantity,
-			            quantity*(response.getConversionMultiple()), response.getPort());
-		        
-		        return response.getPort();
-	}
-	  
-	  public int curr_diff(@PathVariable String from, @PathVariable String to,
-		      @PathVariable int quantity) {
-
-		    Map<String, String> uriVariables = new HashMap<>();
-		    uriVariables.put("from", from);
-		    uriVariables.put("to", to);
-		    ResponseEntity<CurrencyConversionSampleBean> responseEntity = new RestTemplate().getForEntity(
-		            "http://localhost:8080/currency-exchange/from/{from}/to/{to}", CurrencyConversionSampleBean.class,
-		            uriVariables);
-
-		        CurrencyConversionSampleBean response = responseEntity.getBody();
-
-		         new CurrencyConversionSampleBean(response.getId(), from, to, response.getConversionMultiple(), quantity,
-			            quantity*(response.getConversionMultiple()), response.getPort());
-		        
-		        return response.getConversionMultiple();
-	}
+	
 }

@@ -12,13 +12,17 @@ class CurrencyApplicationTests {
 	void contextLoads() {
 
 		CurrencyConversionController obj = new CurrencyConversionController();
-		long id = obj.c_id("USD", "INR", 1);
-		int port_check = obj.port_c("USD", "INR", 2);
-		int currency_diffrence = obj. curr_diff("USD", "INR", 2);
 		
-		assertEquals(id, 10001);
-		assertEquals(currency_diffrence, 65);
-		assertEquals(port_check, 8080);
+		CurrencyConversionSampleBean ans = obj.convertCurrency("USD","INR", 70);
+		
+		int quantity = ans.getQuantity();
+		assertEquals(quantity, 70);
+		String from = ans.getFrom();
+		assertEquals(from, "USD");
+		String to = ans.getTo();
+		assertEquals(to, "INR");
+		
+
 	}
 
 }
